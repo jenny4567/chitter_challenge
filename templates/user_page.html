@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <h1 class="t-header">
+      chitter
+    </h1>     
+  </head>
+  <body>
+    <h2 class="t-user">
+      {{user.user_handle}} ({{user.name_of_user}})
+    </h2>
+    <form action="/user/{user_handle}" method="POST">
+      <err class="t-errors">
+        {{errors}}
+      </err>
+      <p>
+        <label for="Content">Peep content</label>
+        <input type="text" name="content" id="Content">
+      </p>
+      <p>
+        <label for="Tags">Tags</label>
+        <input type="text" name="tags" id="Tags">
+      </p>
+      <p class="t-submit">
+        <input type="submit" value="Peep">
+      </p>
+    </form>
+    <h2>
+        {{user.user_handle}}'s Peeps
+    </h2>
+    <p>
+        {% for peep in peeps %}
+        <h3 class="t-archive">{{peep}}</h3>
+        {% endfor %}
+    </p>
+  </body>
+</html>

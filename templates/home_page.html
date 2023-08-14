@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <h1 class="t-header">
+      chitter
+    </h1>     
+  </head>
+  <body>
+    <form action="/" method="POST">
+      <err class="t-errors">
+        {{errors}}
+      </err>
+    <p>
+      <label for="Username">Username</label>
+      <input type="text" name="user_handle" id="Username">
+    </p><p>
+      <label for="Password">Password</label>
+      <input type="text" name="user_password" id="Password">
+    </p>
+    <p class="t-login">
+      <input type="submit" value="Login">
+    </form>
+    </p>
+    <h2>
+        Archive
+    </h2>
+    <p>
+        {% for peep in peeps %}
+        <h3 class="t-archive">{{peep}}</h3>
+        {% endfor %}
+    </p>
+  </body>
+</html>
